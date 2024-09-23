@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "ifs-l-system"
+version = "0.1.0"
+description = ""
+authors = ["juke2 <126202832+juke2@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
