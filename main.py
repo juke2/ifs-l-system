@@ -1,42 +1,23 @@
-import src.ifs as ifs
-import src.sierpinski as sier
-
-"""
-This is the Template Repl for Python with Turtle.
-
-Python with Turtle lets you make graphics easily in Python.
-
-Check out the official docs here: https://docs.python.org/3/library/turtle.html
-"""
+import turtle_gcode as turtle
+from src.test_L_system import *
 
 
-import turtle
-from src.Lsystem import Lsystem
-
-instructions = {
-    "G": lambda t, dist: t.forward(dist),
-    "F": lambda t, dist: t.forward(dist),
-    "-": lambda t, dist: t.right(120),
-    "+": lambda t, dist: t.left(120),
-}
-start = "F-G-G"
-rules = {"F": "F-G+F+G-F", "G": "GG", "-": "-", "+": "+"}
-items = {"t": turtle.Turtle(), "dist": 200}
-items["t"].speed(0)
-
-
-def defaultMutator(**kwargs):
-    return kwargs
+def main() -> None:
+    test_sierpinski()
+    test_sierpinski_arrowhead()
+    test_dragon_curve()
+    test_fractal_plant()
+    for iteration in range(0, 10):
+        test_stochastic_system()
+    test_context_aware_system()
+    test_binary_tree()
+    test_cantor_set()
+    test_koch_curve()
+    turtle.mainloop()
 
 
-def sierpinskiMutator(**kwargs):
-    kwargs.update({"dist": kwargs.get("dist") / 2})
-    return kwargs
-
-
-# import turtle
-
-# t = turtle.Turtle()
+if __name__ == "__main__":
+    main()
 
 # # for c in ['red', 'green', 'blue', 'yellow']:
 # #     t.color(c)
@@ -92,12 +73,3 @@ def sierpinskiMutator(**kwargs):
 #
 # def interpret(current: str, mappings: dict) -> None
 # def nextGeneration(current: str, genRules: dict) -> str
-def main() -> None:
-    sier_ifs = sier.create_sierpinski_ifs(100)
-    sier_ifs.iterate(5)
-    sier.draw_turtle.screen.mainloop()
-    pass
-
-
-if __name__ == "__main__":
-    main()
