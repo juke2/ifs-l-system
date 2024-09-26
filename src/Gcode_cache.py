@@ -10,7 +10,9 @@ class Gcode_cache:
     def __init__(self, t: turtle.Turtle):
         self.cache = [(False, list(t.pos()))]
 
-    def get_gcode_of_pos(self, pendown, posx, posy):
+    def get_gcode_of_pos(
+        self, pendown: bool, posx: Union[float, int], posy: Union[float, int]
+    ):
         type_of_func = "G1" if pendown else "G0"
         return f"{type_of_func} X{posx:.3f} Y{posy:.3f}"
 

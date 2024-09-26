@@ -29,7 +29,7 @@ class Lsystem:
             "functional": self.next_process_string_functional,
         }
 
-    def __getitem__(self, i):
+    def __getitem__(self, i: int):
         """returns the ith process string"""
         return self.processString(i)
 
